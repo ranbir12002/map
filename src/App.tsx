@@ -367,6 +367,22 @@ export default function App() {
   const wardCount = visiblePolygons.filter((w) => w.WARD_NO <= 303).length;
   const standaloneCircleCount = visiblePolygons.filter((w) => w.WARD_NO >= 304).length;
 
+  const mockSummary = {
+    visiblePolygons: 308,
+    wards: 308,
+    divisions: 13,
+    standalone: 5,
+  };
+
+  const summaryStatistics = selectedDivision === 'all'
+    ? mockSummary
+    : {
+        visiblePolygons: visiblePolygons.length,
+        wards: wardCount,
+        divisions: divisions.length,
+        standalone: standaloneCircleCount,
+      };
+
   return (
     <div className="flex flex-col md:flex-row h-screen w-full bg-neutral-50 overflow-hidden font-sans">
       <div className="w-full md:w-80 lg:w-96 flex-shrink-0 h-full border-r border-neutral-200 bg-white overflow-y-auto flex flex-col p-5 gap-6 shadow-sm z-10">
@@ -438,22 +454,25 @@ export default function App() {
           <div className="text-sm font-semibold text-green-800 mb-3">
             {selectedDivision === 'all' ? 'Summary Statistics' : `${selectedDivision} Division`}
           </div>
+          {selectedDivision === 'all' && (
+            <div className="text-xs text-neutral-500 mb-3">Sample demo values shown for the mock summary.</div>
+          )}
           <div className="grid grid-cols-2 gap-y-3 gap-x-2">
             <div>
               <div className="text-xs text-neutral-500 mb-0.5">Visible Polygons</div>
-              <div className="text-lg font-bold text-neutral-800">{visiblePolygons.length}</div>
+              <div className="text-lg font-bold text-neutral-800">{summaryStatistics.visiblePolygons}</div>
             </div>
             <div>
               <div className="text-xs text-neutral-500 mb-0.5">Wards</div>
-              <div className="text-lg font-bold text-blue-700">{wardCount}</div>
+              <div className="text-lg font-bold text-blue-700">{summaryStatistics.wards}</div>
             </div>
             <div>
               <div className="text-xs text-neutral-500 mb-0.5">Divisions</div>
-              <div className="text-lg font-bold text-emerald-600">{divisions.length}</div>
+              <div className="text-lg font-bold text-emerald-600">{summaryStatistics.divisions}</div>
             </div>
             <div>
               <div className="text-xs text-neutral-500 mb-0.5">Standalone</div>
-              <div className="text-lg font-bold text-pink-600">{standaloneCircleCount}</div>
+              <div className="text-lg font-bold text-pink-600">{summaryStatistics.standalone}</div>
             </div>
           </div>
         </div>
