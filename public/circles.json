@@ -2705,8 +2705,8 @@
   {
     "_id": "6a1d5120960f89c8cb56a5f4",
     "CIRCLE_NO": 304,
-    "CIR_NAM_NU": "304-Narsapur",
-    "name": "Narsapur",
+    "CIR_NAM_NU": "304-Toopran",
+    "name": "Toopran",
     "Zone_Name": "Narsapur",
     "CORPORATE": "NARSAPUR",
     "wards": [
@@ -2717,7 +2717,7 @@
       304
     ],
     "ward_names": [
-      "304-Narsapur"
+      "304-Toopran"
     ],
     "business_count": 0,
     "status": "active",

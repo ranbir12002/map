@@ -256152,9 +256152,9 @@
   {
     "_id": "6a1d5114960f89c8cb56a41f",
     "WARD_NO": 304,
-    "NAME": "304-Narsapur",
+    "NAME": "304-Toopran",
     "CIRCLE_NO": 304,
-    "CIR_NAM_NU": "304-Narsapur",
+    "CIR_NAM_NU": "304-Toopran",
     "Zone_Name": "Narsapur",
     "AC_Name": "Narsapur",
     "CORPORATE": "NARSAPUR",
@@ -256358,8 +256358,8 @@
     "circle": {
       "_id": "6a1d5120960f89c8cb56a5f4",
       "CIRCLE_NO": 304,
-      "CIR_NAM_NU": "304-Narsapur",
-      "name": "Narsapur",
+      "CIR_NAM_NU": "304-Toopran",
+      "name": "Toopran",
       "division_name": "Future City"
     }
   },
