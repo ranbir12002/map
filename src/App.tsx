@@ -248,7 +248,7 @@ export default function App() {
       map.on('click', 'polygons-fill', (e) => {
         if (e.features && e.features.length > 0) {
           const props = e.features[0].properties;
-          const entityType = props.isCircle ? 'Standalone Circle' : 'Ward';
+          const entityType = props.isCircle ? 'Future City Circle' : 'Ward';
           const popupContent = `
             <div style="font-family: sans-serif; padding: 6px; min-width: 200px; font-size: 13px;">
               <div style="font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-bottom: 6px; color: #1a237e;">
@@ -360,8 +360,8 @@ export default function App() {
       <div className="w-full md:w-80 lg:w-96 flex-shrink-0 h-full border-r border-neutral-200 bg-white overflow-y-auto flex flex-col p-5 gap-6 shadow-sm z-10">
         
         <div>
-          <h1 className="text-xl font-bold text-blue-700 tracking-tight">Unified Map View</h1>
-          <p className="text-sm text-neutral-500 mt-1">Interactive representation of administrative areas and standalone circles.</p>
+          <h1 className="text-xl font-bold text-blue-700 tracking-tight">Know Your Jurisdiction</h1>
+          <p className="text-sm text-neutral-500 mt-1">Interactive representation of administrative areas and Future City circles.</p>
         </div>
 
         {error && (
@@ -440,7 +440,7 @@ export default function App() {
               <div className="text-lg font-bold text-emerald-600">{summaryStatistics.divisions}</div>
             </div>
             <div>
-              <div className="text-xs text-neutral-500 mb-0.5">Standalone</div>
+              <div className="text-xs text-neutral-500 mb-0.5">Future City Circles</div>
               <div className="text-lg font-bold text-pink-600">{summaryStatistics.standalone}</div>
             </div>
           </div>
@@ -496,7 +496,7 @@ export default function App() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded bg-pink-500 opacity-80" />
-                <span className="text-sm text-neutral-600">Standalone Circles</span>
+                <span className="text-sm text-neutral-600">Future City Circles</span>
               </div>
             </div>
           ) : colorMode === 'division' ? (
