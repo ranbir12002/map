@@ -1,0 +1,311 @@
+[
+  {
+    "_id": "6a1d5444023d45882b92c523",
+    "name": "Begumpet",
+    "circles": [
+      "6a1d511c960f89c8cb56a536",
+      "6a1d511c960f89c8cb56a53d",
+      "6a1d511c960f89c8cb56a544",
+      "6a1d511c960f89c8cb56a547",
+      "6a1d511c960f89c8cb56a54b"
+    ],
+    "circle_names": [
+      "Borabanda",
+      "Yousufguda",
+      "Begumpet",
+      "Ameerpet",
+      "Sanathnagar"
+    ],
+    "createdAt": "2026-06-01T09:43:32.687Z",
+    "updatedAt": "2026-06-01T09:43:32.687Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5443023d45882b92c507",
+    "name": "Charminar",
+    "circles": [
+      "6a1d5119960f89c8cb56a4d5",
+      "6a1d511a960f89c8cb56a4db",
+      "6a1d511a960f89c8cb56a4e7",
+      "6a1d511a960f89c8cb56a4ef"
+    ],
+    "circle_names": [
+      "Santosh Nagar",
+      "Malakpet",
+      "Charminar",
+      "Moosarambagh"
+    ],
+    "createdAt": "2026-06-01T09:43:31.937Z",
+    "updatedAt": "2026-06-01T09:43:31.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5444023d45882b92c50f",
+    "name": "Golconda",
+    "circles": [
+      "6a1d511a960f89c8cb56a4f6",
+      "6a1d511a960f89c8cb56a4fc",
+      "6a1d511b960f89c8cb56a500",
+      "6a1d511b960f89c8cb56a50e",
+      "6a1d511b960f89c8cb56a514"
+    ],
+    "circle_names": [
+      "Goshamahal",
+      "Begum Bazar",
+      "Golconda",
+      "Mehdipatnam",
+      "Masab Tank"
+    ],
+    "createdAt": "2026-06-01T09:43:32.167Z",
+    "updatedAt": "2026-06-01T09:43:32.167Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5444023d45882b92c51b",
+    "name": "Khairatabad",
+    "circles": [
+      "6a1d511b960f89c8cb56a51a",
+      "6a1d511b960f89c8cb56a51e",
+      "6a1d511b960f89c8cb56a521",
+      "6a1d511b960f89c8cb56a524",
+      "6a1d511b960f89c8cb56a527",
+      "6a1d511c960f89c8cb56a52a",
+      "6a1d511c960f89c8cb56a52d",
+      "6a1d511c960f89c8cb56a530",
+      "6a1d511c960f89c8cb56a533"
+    ],
+    "circle_names": [
+      "Red Hills",
+      "Irrum Manzil",
+      "Somajiguda",
+      "Khairatabad",
+      "Himayathnagar",
+      "Jubilee Hills",
+      "Venkateshwara Colony",
+      "Banjara Hills",
+      "Film Nagar"
+    ],
+    "createdAt": "2026-06-01T09:43:32.479Z",
+    "updatedAt": "2026-06-01T09:43:32.479Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5445023d45882b92c543",
+    "name": "Kukatpally",
+    "circles": [
+      "6a1d511e960f89c8cb56a5a4",
+      "6a1d511e960f89c8cb56a5aa",
+      "6a1d511f960f89c8cb56a5ad",
+      "6a1d511f960f89c8cb56a5b0",
+      "6a1d511f960f89c8cb56a5b8",
+      "6a1d511f960f89c8cb56a5bd",
+      "6a1d511f960f89c8cb56a5c2",
+      "6a1d511f960f89c8cb56a5c7"
+    ],
+    "circle_names": [
+      "Anjaiah Nagar",
+      "HITEC city",
+      "Madhapur",
+      "Allwyn Colony",
+      "Kukatpally",
+      "KPHB Colony",
+      "Moosapet",
+      "Balanagar"
+    ],
+    "createdAt": "2026-06-01T09:43:33.562Z",
+    "updatedAt": "2026-06-01T09:43:33.562Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5443023d45882b92c4f6",
+    "name": "LB Nagar",
+    "circles": [
+      "6a1d5116960f89c8cb56a476",
+      "6a1d5117960f89c8cb56a47e",
+      "6a1d5117960f89c8cb56a483",
+      "6a1d5117960f89c8cb56a489",
+      "6a1d5117960f89c8cb56a490"
+    ],
+    "circle_names": [
+      "Nagole",
+      "Kothapet",
+      "Saroornagar",
+      "LB Nagar",
+      "Hayathnagar"
+    ],
+    "createdAt": "2026-06-01T09:43:31.209Z",
+    "updatedAt": "2026-06-01T09:43:31.209Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5442023d45882b92c4e6",
+    "name": "Malkajgiri",
+    "circles": [
+      "6a1d5115960f89c8cb56a429",
+      "6a1d5115960f89c8cb56a42f",
+      "6a1d5115960f89c8cb56a433",
+      "6a1d5115960f89c8cb56a43b",
+      "6a1d5115960f89c8cb56a43e",
+      "6a1d5115960f89c8cb56a442",
+      "6a1d5115960f89c8cb56a447",
+      "6a1d5115960f89c8cb56a44e"
+    ],
+    "circle_names": [
+      "Keesara",
+      "Shamirpet",
+      "Alwal",
+      "Monda Market",
+      "Fateh Nagar",
+      "Bowenpally",
+      "Moula Ali",
+      "Malkajgiri"
+    ],
+    "createdAt": "2026-06-01T09:43:30.380Z",
+    "updatedAt": "2026-06-01T09:43:30.380Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5445023d45882b92c54d",
+    "name": "Quthbullapur",
+    "circles": [
+      "6a1d511f960f89c8cb56a5cb",
+      "6a1d511f960f89c8cb56a5d2",
+      "6a1d5120960f89c8cb56a5d7",
+      "6a1d5120960f89c8cb56a5da",
+      "6a1d5120960f89c8cb56a5e0",
+      "6a1d5120960f89c8cb56a5e6",
+      "6a1d5120960f89c8cb56a5ec"
+    ],
+    "circle_names": [
+      "Chintal",
+      "Quthbullapur",
+      "Jeedimetla",
+      "Kompally",
+      "Gajularamaram",
+      "Nizampet",
+      "Medchal"
+    ],
+    "createdAt": "2026-06-01T09:43:33.871Z",
+    "updatedAt": "2026-06-01T09:43:33.871Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5444023d45882b92c52d",
+    "name": "Secunderabad",
+    "circles": [
+      "6a1d511c960f89c8cb56a54f",
+      "6a1d511c960f89c8cb56a555",
+      "6a1d511d960f89c8cb56a559",
+      "6a1d511d960f89c8cb56a55c",
+      "6a1d511d960f89c8cb56a563",
+      "6a1d511d960f89c8cb56a569",
+      "6a1d511d960f89c8cb56a56f"
+    ],
+    "circle_names": [
+      "Kavadiguda",
+      "Padmarao Nagar",
+      "Ramgopalpet",
+      "Musheerabad",
+      "Kachiguda",
+      "Amberpet",
+      "Tarnaka"
+    ],
+    "createdAt": "2026-06-01T09:43:32.975Z",
+    "updatedAt": "2026-06-01T09:43:32.975Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5445023d45882b92c538",
+    "name": "Serilingampally",
+    "circles": [
+      "6a1d511d960f89c8cb56a579",
+      "6a1d511e960f89c8cb56a580",
+      "6a1d511e960f89c8cb56a586",
+      "6a1d511e960f89c8cb56a58e",
+      "6a1d511e960f89c8cb56a593",
+      "6a1d511e960f89c8cb56a598",
+      "6a1d511e960f89c8cb56a59c",
+      "6a1d511e960f89c8cb56a5a0"
+    ],
+    "circle_names": [
+      "Narsingi",
+      "Patancheruvu",
+      "Ameenpur",
+      "Chanda Nagar",
+      "Miyapur",
+      "Gachibowli",
+      "Serilingampally",
+      "Kondapur"
+    ],
+    "createdAt": "2026-06-01T09:43:33.270Z",
+    "updatedAt": "2026-06-01T09:43:33.270Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5443023d45882b92c500",
+    "name": "Shamshabad",
+    "circles": [
+      "6a1d5117960f89c8cb56a498",
+      "6a1d5118960f89c8cb56a4a3",
+      "6a1d5118960f89c8cb56a4ae",
+      "6a1d5118960f89c8cb56a4b1",
+      "6a1d5118960f89c8cb56a4b6",
+      "6a1d5119960f89c8cb56a4be",
+      "6a1d5119960f89c8cb56a4c9"
+    ],
+    "circle_names": [
+      "Shamshabad",
+      "Badangpet",
+      "Rajendra Nagar",
+      "Kismatpur",
+      "Attapur",
+      "Bahadurpura",
+      "Chandrayangutta"
+    ],
+    "createdAt": "2026-06-01T09:43:31.708Z",
+    "updatedAt": "2026-06-01T09:43:31.708Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5445023d45882b92c551",
+    "name": "Standalone Circles",
+    "circles": [
+      "6a1d5120960f89c8cb56a5f4",
+      "6a1d5120960f89c8cb56a5f7",
+      "6a1d5120960f89c8cb56a5fa",
+      "6a1d5120960f89c8cb56a5fd",
+      "6a1d5120960f89c8cb56a600"
+    ],
+    "circle_names": [
+      "Narsapur",
+      "Sangareddy",
+      "Vikarabad",
+      "Bhongir",
+      "Future CIty"
+    ],
+    "createdAt": "2026-06-01T09:43:33.972Z",
+    "updatedAt": "2026-06-01T09:43:33.972Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a1d5442023d45882b92c4ee",
+    "name": "Uppal",
+    "circles": [
+      "6a1d5116960f89c8cb56a454",
+      "6a1d5116960f89c8cb56a45e",
+      "6a1d5116960f89c8cb56a462",
+      "6a1d5116960f89c8cb56a467",
+      "6a1d5116960f89c8cb56a46e"
+    ],
+    "circle_names": [
+      "Ghatkesar",
+      "Kapra",
+      "Cherlapally",
+      "Nacharam",
+      "Uppal"
+    ],
+    "createdAt": "2026-06-01T09:43:30.599Z",
+    "updatedAt": "2026-06-01T09:43:30.599Z",
+    "__v": 0
+  }
+]

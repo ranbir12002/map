@@ -62,45 +62,18 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDivision, setSelectedDivision] = useState('all');
 
+  // ─── Data Loading: fetch exported MongoDB JSON files ────────
   useEffect(() => {
     setLoading(true);
     Promise.all([
-      fetch('/clear.geojson').then(res => res.json()),
-      fetch('/mapping.json').then(res => res.json()).catch(() => ({})),
-      fetch('/division_mapping.json').then(res => res.json()).catch(() => ({}))
+      fetch('/wards.json').then(res => res.json()),
+      fetch('/divisions.json').then(res => res.json())
     ])
-      .then(([data, mapping, divisionMapping]) => {
-        const wards = data.features.map((f: any, idx: number) => {
-          const wardNo = f.properties.WARD_NO || idx;
-          const mappedCircle = mapping[wardNo] || f.properties.Zone_Name || 'Unknown Circle';
-          const mappedDivision = divisionMapping[mappedCircle] || 'Unknown Division';
-
-          return {
-            _id: `w${idx}`,
-            NAME: f.properties.NAME || f.properties.name || `Polygon ${idx}`,
-            WARD_NO: wardNo,
-            CIRCLE_NO: f.properties.CIRCLE_NO || 0,
-            CIR_NAM_NU: f.properties.CIR_NAM_NU || mappedCircle,
-            Zone_Name: f.properties.Zone_Name || 'Unknown Zone',
-            AC_Name: f.properties.AC_Name || 'Unknown AC',
-            CORPORATE: f.properties.CORPORATE || 'Unknown Corp',
-            Area__Sqkm: f.properties.Area__Sqkm || f.properties.Area || 0,
-            business_count: f.properties.business_count || 0,
-            circle: { name: mappedCircle, division_name: mappedDivision },
-            geometry: f.geometry,
-          };
-        });
-
-        // Divisions based on the mappedDivision (which becomes division_name)
-        const uniqueDivisions = Array.from(new Set(wards.map((w: any) => w.circle.division_name))) as string[];
-        const loadedDivs = uniqueDivisions.map((name, i) => ({
-          _id: `d${i}`,
-          name,
-          circle_names: Array.from(new Set(wards.filter((w: any) => w.circle.division_name === name).map((w: any) => w.circle.name)))
-        }));
-
+      .then(([wards, divs]) => {
+        // Wards already come with populated circle (including division_name)
+        // and geometry — no mapping or merging needed
         setAllPolygons(wards);
-        setDivisions(loadedDivs);
+        setDivisions(divs);
         setLoading(false);
       })
       .catch((err) => {
@@ -110,6 +83,7 @@ export default function App() {
       });
   }, []);
 
+  // Build a lookup: circleName -> divisionName from divisions data
   const circleToDivisionMap: Record<string, string> = {};
   divisions.forEach((div) => {
     (div.circle_names || []).forEach((cName: string) => {
@@ -117,8 +91,11 @@ export default function App() {
     });
   });
 
+  // Get the division name for a ward
   const getDivisionForWard = (ward: any) => {
+    // Primary: populated circle's division_name
     if (ward.circle?.division_name) return ward.circle.division_name;
+    // Fallback: look up by circle name
     const circleName = ward.circle?.name || ward.CIR_NAM_NU?.split('-').slice(1).join('-').trim();
     if (circleName) {
       return circleToDivisionMap[circleName.toLowerCase()] || null;
@@ -126,10 +103,12 @@ export default function App() {
     return null;
   };
 
+  // Filter polygons by selected division
   const visiblePolygons = selectedDivision === 'all'
     ? allPolygons
     : allPolygons.filter((ward) => getDivisionForWard(ward) === selectedDivision);
 
+  // Convert to GeoJSON for the map
   const getGeoJSONData = (): GeoJSON.FeatureCollection => {
     return {
       type: 'FeatureCollection',
@@ -157,7 +136,7 @@ export default function App() {
               name: ward.NAME,
               ward_no: ward.WARD_NO,
               isCircle,
-              circle_name: ward.CIR_NAM_NU || (ward.circle?.CIR_NAM_NU) || 'N/A',
+              circle_name: ward.CIR_NAM_NU || ward.circle?.CIR_NAM_NU || ward.circle?.name || 'N/A',
               circle_no: ward.CIRCLE_NO || 'N/A',
               division_name: divName,
               zone: ward.Zone_Name || 'N/A',
@@ -172,6 +151,7 @@ export default function App() {
     };
   };
 
+  // ─── Initialize Map ─────────────────────────────────────────
   useEffect(() => {
     if (loading || allPolygons.length === 0 || !mapContainerRef.current || mapRef.current) return;
 
@@ -275,7 +255,7 @@ export default function App() {
                 ${entityType}: ${props.name}
               </div>
               <strong>Ward/Circle No:</strong> ${props.ward_no}<br/>
-              <strong>Parent Circle:</strong> ${props.circle_name}<br/>
+              <strong>CT Circle:</strong> ${props.circle_name}<br/>
               <strong>CT Division:</strong> ${props.division_name}<br/>
               <strong>Zone:</strong> ${props.zone}<br/>
               <strong>AC Name:</strong> ${props.ac}<br/>
@@ -303,6 +283,7 @@ export default function App() {
     };
   }, [loading]);
 
+  // Sync data changes to the map source
   useEffect(() => {
     if (mapRef.current && mapRef.current.getSource('polygons')) {
       const source = mapRef.current.getSource('polygons') as maplibregl.GeoJSONSource;
@@ -310,12 +291,14 @@ export default function App() {
     }
   }, [colorMode, allPolygons, selectedDivision, divisions]);
 
+  // Fit bounds when division filter changes
   useEffect(() => {
     if (mapRef.current && visiblePolygons.length > 0) {
       fitMapBounds(visiblePolygons);
     }
   }, [selectedDivision]);
 
+  // Sync label visibility
   useEffect(() => {
     if (mapRef.current && mapRef.current.getLayer('polygons-label')) {
       mapRef.current.setLayoutProperty(
@@ -367,21 +350,13 @@ export default function App() {
   const wardCount = visiblePolygons.filter((w) => w.WARD_NO <= 303).length;
   const standaloneCircleCount = visiblePolygons.filter((w) => w.WARD_NO >= 304).length;
 
-  const mockSummary = {
-    visiblePolygons: 308,
-    wards: 308,
-    divisions: 13,
-    standalone: 5,
+  // Real summary statistics from the exported data
+  const summaryStatistics = {
+    visiblePolygons: visiblePolygons.length,
+    wards: wardCount,
+    divisions: divisions.length,
+    standalone: standaloneCircleCount,
   };
-
-  const summaryStatistics = selectedDivision === 'all'
-    ? mockSummary
-    : {
-        visiblePolygons: visiblePolygons.length,
-        wards: wardCount,
-        divisions: divisions.length,
-        standalone: standaloneCircleCount,
-      };
 
   return (
     <div className="flex flex-col md:flex-row h-screen w-full bg-neutral-50 overflow-hidden font-sans">
@@ -454,9 +429,6 @@ export default function App() {
           <div className="text-sm font-semibold text-green-800 mb-3">
             {selectedDivision === 'all' ? 'Summary Statistics' : `${selectedDivision} Division`}
           </div>
-          {selectedDivision === 'all' && (
-            <div className="text-xs text-neutral-500 mb-3">Sample demo values shown for the mock summary.</div>
-          )}
           <div className="grid grid-cols-2 gap-y-3 gap-x-2">
             <div>
               <div className="text-xs text-neutral-500 mb-0.5">Visible Polygons</div>
@@ -565,4 +537,3 @@ export default function App() {
     </div>
   );
 }
-
