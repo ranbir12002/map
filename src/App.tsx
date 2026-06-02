@@ -258,10 +258,7 @@ export default function App() {
               <strong>CT Circle:</strong> ${props.circle_name}<br/>
               <strong>CT Division:</strong> ${props.division_name}<br/>
               <strong>Zone:</strong> ${props.zone}<br/>
-              <strong>AC Name:</strong> ${props.ac}<br/>
-              <strong>Corporate:</strong> ${props.corporate}<br/>
-              <strong>Area:</strong> ${parseFloat(props.area).toFixed(3)} sq km<br/>
-              <strong>Businesses:</strong> ${props.business_count || 0}
+              <strong>AC Name:</strong> ${props.ac}
             </div>
           `;
 

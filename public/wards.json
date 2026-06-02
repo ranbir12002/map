@@ -254864,11 +254864,11 @@
     "updatedAt": "2026-06-01T09:30:06.335Z",
     "__v": 0,
     "circle": {
-      "_id": "6a1d511e960f89c8cb56a586",
-      "CIRCLE_NO": 58,
-      "CIR_NAM_NU": "58 - Ameenpur",
-      "name": "Ameenpur",
-      "division_name": "Serilingampally"
+      "_id": "6a1d5115960f89c8cb56a442",
+      "CIRCLE_NO": 6,
+      "CIR_NAM_NU": "6 - Bowenpally",
+      "name": "Bowenpally",
+      "division_name": "Malkajgiri"
     }
   },
   {
@@ -256142,11 +256142,11 @@
     "updatedAt": "2026-06-01T09:29:57.699Z",
     "__v": 0,
     "circle": {
-      "_id": "6a1d5115960f89c8cb56a442",
-      "CIRCLE_NO": 6,
-      "CIR_NAM_NU": "6 - Bowenpally",
-      "name": "Bowenpally",
-      "division_name": "Malkajgiri"
+      "_id": "6a1d511e960f89c8cb56a586",
+      "CIRCLE_NO": 58,
+      "CIR_NAM_NU": "58 - Ameenpur",
+      "name": "Ameenpur",
+      "division_name": "Serilingampally"
     }
   },
   {
@@ -256360,7 +256360,7 @@
       "CIRCLE_NO": 304,
       "CIR_NAM_NU": "304-Narsapur",
       "name": "Narsapur",
-      "division_name": "Standalone Circles"
+      "division_name": "Future City"
     }
   },
   {
@@ -259634,7 +259634,7 @@
       "CIRCLE_NO": 305,
       "CIR_NAM_NU": "305-Sangareddy",
       "name": "Sangareddy",
-      "division_name": "Standalone Circles"
+      "division_name": "Future City"
     }
   },
   {
@@ -261980,7 +261980,7 @@
       "CIRCLE_NO": 306,
       "CIR_NAM_NU": "306-Vikarabad",
       "name": "Vikarabad",
-      "division_name": "Standalone Circles"
+      "division_name": "Future City"
     }
   },
   {
@@ -265886,7 +265886,7 @@
       "CIRCLE_NO": 307,
       "CIR_NAM_NU": "307-Bhongir",
       "name": "Bhongir",
-      "division_name": "Standalone Circles"
+      "division_name": "Future City"
     }
   },
   {
@@ -269268,7 +269268,7 @@
       "CIRCLE_NO": 308,
       "CIR_NAM_NU": "308-Future CIty",
       "name": "Future CIty",
-      "division_name": "Standalone Circles"
+      "division_name": "Future City"
     }
   }
 ]
